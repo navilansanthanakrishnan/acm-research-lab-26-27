@@ -1,0 +1,38 @@
+[
+  {
+    "model": "google/gemma-4-31b-it:free",
+    "reply": "Model interpretability is the degree to which a human can understand the cause of a decision made by a machine learning model.",
+    "prompt_tokens": 11,
+    "completion_tokens": 24,
+    "cost_usd": 0,
+    "seconds": 181.93,
+    "prompt": "In one sentence, what is model interpretability?"
+  },
+  {
+    "model": "google/gemma-4-31b-it:free",
+    "reply": "A post-hoc explanation may highlight a feature like \"low credit score\" as the primary reason, even if the model actually relied on a complex interaction of hidden variables. This creates a \"fidelity gap\" where the explanation provides a plausible justification that does not accurately reflect the model's true internal logic.",
+    "prompt_tokens": 28,
+    "completion_tokens": 61,
+    "cost_usd": 0,
+    "seconds": 2.4,
+    "prompt": "A loan model denies an applicant. Give one reason a post-hoc explanation of that decision could be misleading. Answer in two sentences."
+  },
+  {
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "reply": "Model interpretability is the degree to which a human can understand the internal mechanics, reasoning, and decision-making processes behind a machine learning model's outputs.",
+    "prompt_tokens": 11,
+    "completion_tokens": 32,
+    "cost_usd": 0,
+    "seconds": 182.92,
+    "prompt": "In one sentence, what is model interpretability?"
+  },
+  {
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "reply": "A post-hoc explanation might highlight a specific feature, such as a low credit score, as the primary reason for denial even if that feature was merely a proxy for a protected characteristic. This can create a false sense of fairness by masking underlying biases or complex non-linear relationships within the model's actual decision-making process.",
+    "prompt_tokens": 28,
+    "completion_tokens": 66,
+    "cost_usd": 0,
+    "seconds": 92.44,
+    "prompt": "A loan model denies an applicant. Give one reason a post-hoc explanation of that decision could be misleading. Answer in two sentences."
+  }
+]
