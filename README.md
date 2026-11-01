@@ -5,6 +5,7 @@ My work for the [UCSC ACM Research Lab](https://github.com/CantBush/ACM-Research
 | Week | Deliverable | Folder |
 | --- | --- | --- |
 | 4 | Kickoff: OpenRouter key, API calls to two models, Lipton (2016), paper pick | [`week-4/`](week-4/) |
+| 5 | Forward and backward chaining (animal identifier), LIME summary | [`week-5/`](week-5/) |
 
 ## Running the code
 
@@ -20,3 +21,11 @@ python3 api_calls.py   # same prompts to each model, saved to outputs/api_calls.
 ```
 
 The script skips calls whose results are already saved, so a run cut short by a rate limit can be restarted.
+
+Week 5 needs no key:
+
+```sh
+cd week-5
+python3 chaining.py         # test animals through both methods, saved to outputs/run.txt
+python3 chaining.py --ask   # think of an animal and answer the questions yourself
+```

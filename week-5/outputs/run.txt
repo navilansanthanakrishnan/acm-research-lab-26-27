@@ -1,0 +1,162 @@
+14 rules, 19 observable features, 7 animals
+
+=== cheetah ===
+observed: dark spots, eats meat, has hair, tawny
+
+forward chaining:
+  has hair  ->  mammal
+  mammal + eats meat  ->  carnivore
+  carnivore + tawny + dark spots  ->  cheetah
+  result: cheetah
+
+backward chaining:
+ goal: cheetah?
+  cheetah: try IF carnivore + tawny + dark spots
+    carnivore: try IF mammal + eats meat
+      mammal: try IF has hair
+        has hair? yes
+      mammal: proven
+      eats meat? yes
+    carnivore: proven
+    tawny? yes
+    dark spots? yes
+  cheetah: proven
+  result: cheetah
+  asked 4 of 19 possible questions
+
+=== zebra ===
+observed: black stripes, gives milk, has hooves, white
+
+forward chaining:
+  gives milk  ->  mammal
+  mammal + has hooves  ->  ungulate
+  ungulate + white + black stripes  ->  zebra
+  result: zebra
+
+backward chaining:
+ goal: cheetah?
+  cheetah: try IF carnivore + tawny + dark spots
+    carnivore: try IF mammal + eats meat
+      mammal: try IF has hair
+        has hair? no
+      mammal: try IF gives milk
+        gives milk? yes
+      mammal: proven
+      eats meat? no
+    carnivore: try IF mammal + has pointed teeth + has claws
+      has pointed teeth? no
+    carnivore: not proven
+  cheetah: not proven
+ goal: tiger?
+  tiger: try IF carnivore + tawny + black stripes
+  tiger: not proven
+ goal: giraffe?
+  giraffe: try IF ungulate + long neck + long legs + dark spots
+    ungulate: try IF mammal + has hooves
+      has hooves? yes
+    ungulate: proven
+    long neck? no
+  giraffe: not proven
+ goal: zebra?
+  zebra: try IF ungulate + white + black stripes
+    white? yes
+    black stripes? yes
+  zebra: proven
+  result: zebra
+  asked 8 of 19 possible questions
+
+=== penguin ===
+observed: black and white, can't fly, has feathers, lays eggs, swims
+
+forward chaining:
+  has feathers  ->  bird
+  bird + can't fly + swims + black and white  ->  penguin
+  result: penguin
+
+backward chaining:
+ goal: cheetah?
+  cheetah: try IF carnivore + tawny + dark spots
+    carnivore: try IF mammal + eats meat
+      mammal: try IF has hair
+        has hair? no
+      mammal: try IF gives milk
+        gives milk? no
+      mammal: not proven
+    carnivore: try IF mammal + has pointed teeth + has claws
+    carnivore: not proven
+  cheetah: not proven
+ goal: tiger?
+  tiger: try IF carnivore + tawny + black stripes
+  tiger: not proven
+ goal: giraffe?
+  giraffe: try IF ungulate + long neck + long legs + dark spots
+    ungulate: try IF mammal + has hooves
+    ungulate: not proven
+  giraffe: not proven
+ goal: zebra?
+  zebra: try IF ungulate + white + black stripes
+  zebra: not proven
+ goal: ostrich?
+  ostrich: try IF bird + can't fly + long neck + long legs
+    bird: try IF has feathers
+      has feathers? yes
+    bird: proven
+    can't fly? yes
+    long neck? no
+  ostrich: not proven
+ goal: penguin?
+  penguin: try IF bird + can't fly + swims + black and white
+    swims? yes
+    black and white? yes
+  penguin: proven
+  result: penguin
+  asked 7 of 19 possible questions
+
+=== house cat (not in the rules) ===
+observed: eats meat, has claws, has hair, has pointed teeth
+
+forward chaining:
+  has hair  ->  mammal
+  mammal + eats meat  ->  carnivore
+  result: unknown (no animal rule fired)
+
+backward chaining:
+ goal: cheetah?
+  cheetah: try IF carnivore + tawny + dark spots
+    carnivore: try IF mammal + eats meat
+      mammal: try IF has hair
+        has hair? yes
+      mammal: proven
+      eats meat? yes
+    carnivore: proven
+    tawny? no
+  cheetah: not proven
+ goal: tiger?
+  tiger: try IF carnivore + tawny + black stripes
+  tiger: not proven
+ goal: giraffe?
+  giraffe: try IF ungulate + long neck + long legs + dark spots
+    ungulate: try IF mammal + has hooves
+      has hooves? no
+    ungulate: not proven
+  giraffe: not proven
+ goal: zebra?
+  zebra: try IF ungulate + white + black stripes
+  zebra: not proven
+ goal: ostrich?
+  ostrich: try IF bird + can't fly + long neck + long legs
+    bird: try IF has feathers
+      has feathers? no
+    bird: try IF flies + lays eggs
+      flies? no
+    bird: not proven
+  ostrich: not proven
+ goal: penguin?
+  penguin: try IF bird + can't fly + swims + black and white
+  penguin: not proven
+ goal: albatross?
+  albatross: try IF bird + flies well
+  albatross: not proven
+  result: unknown (every animal goal failed)
+  asked 6 of 19 possible questions
+
